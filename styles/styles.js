@@ -72,4 +72,22 @@ export const modalStyles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 500,
   },
+  modalInput: {
+    borderColor: customStyles.borderColor,
+    borderWidth: 1,
+    borderRadius: customStyles.borderRadius,
+    marginBottom: 10,
+  },
+  modalText: {
+    fontSize: 16,
+    fontWeight: 500,
+    marginBottom: 5,
+  },
+  micronutrientsWrapper: {
+    flexDirection: "row",
+    gap: 5,
+  },
+  micronutrientsLayout: {
+    flex: 1,
+  },
 });

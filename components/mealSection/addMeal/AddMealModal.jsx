@@ -8,21 +8,30 @@ export default function AddMealModal({ sectionName, visible, onClose }) {
       <View style={modalStyles.modalContainer}>
         <Text style={modalStyles.modalTitle}>Add Food To {sectionName}</Text>
         <View>
-          <Text>Food Name</Text>
+          <Text style={modalStyles.modalText}>Food Name</Text>
           <TextInput
             keyboardType="default"
             placeholder="e.g Pizza slice"
+            style={modalStyles.modalInput}
           ></TextInput>
         </View>
         <View>
-          <Text>Calories</Text>
-          <TextInput keyboardType="number-pad" placeholder="0"></TextInput>
+          <Text style={modalStyles.modalText}>Calories</Text>
+          <TextInput
+            keyboardType="number-pad"
+            placeholder="0"
+            style={modalStyles.modalInput}
+          ></TextInput>
         </View>
-        <View>
+        <View style={modalStyles.micronutrientsWrapper}>
           {modalMacronutrients.map((macronutrientName, index) => (
-            <View key={index}>
-              <Text>{macronutrientName}</Text>
-              <TextInput placeholder="0" keyboardType="number-pad"></TextInput>
+            <View key={index} style={modalStyles.micronutrientsLayout}>
+              <Text style={modalStyles.modalText}>{macronutrientName}</Text>
+              <TextInput
+                placeholder="0"
+                keyboardType="number-pad"
+                style={modalStyles.modalInput}
+              ></TextInput>
             </View>
           ))}
         </View>
