@@ -1,39 +1,26 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { Text, TouchableOpacity, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { styles } from "./styles/styles";
+import Header from "./components/header/Header";
+import { CirclePlus } from "lucide-react-native";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <View>
-        <Text>
-          CalTrack
-        </Text>
+    <SafeAreaView style={styles.body}>
+      <Header />
+      <View style={styles.section}>
+        <Text>Remaining</Text>
       </View>
-      <View>
-        <Text>
-          Remaining
-        </Text>
+      <View style={styles.section}>
+        <Text>Meals</Text>
       </View>
-      <View>
-        <Text>
-         Meals
-        </Text>
+      <View style={styles.appBar}>
+        <TouchableOpacity style={styles.circlePlus}>
+          <CirclePlus size={40} />
+        </TouchableOpacity>
       </View>
-      <View>
-        <Text>
-         App Bar
-        </Text>
-      </View>
-           <StatusBar style="auto" />
-    </View>
+      <StatusBar style="auto" />
+    </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
