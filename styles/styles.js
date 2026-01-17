@@ -58,3 +58,18 @@ export const styles = StyleSheet.create({
     color: customStyles.graySecondary,
   },
 });
+
+export const modalStyles = StyleSheet.create({
+  modalContainer: {
+    margin: "auto",
+    height: "50%",
+    width: "90%",
+    justifyContent: "center",
+  },
+  modalTitle: {
+    textAlign: "center",
+    marginBottom: 10,
+    fontSize: 20,
+    fontWeight: 500,
+  },
+});

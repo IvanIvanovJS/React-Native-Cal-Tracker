@@ -14,8 +14,8 @@ export default function App() {
         <View style={styles.section}>
           <Text>Remaining</Text>
         </View>
-        {mealSections.map((section) => (
-          <MealSection key={section} sectionName={section} />
+        {mealSections.map((section, index) => (
+          <MealSection key={index} sectionName={section} />
         ))}
       </ScrollView>
       <AppBar />
