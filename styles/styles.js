@@ -4,6 +4,7 @@ const customStyles = {
   borderColor: "#edf2f7",
   borderWidth: 2,
   borderRadius: 12,
+  graySecondary: "#757575",
 };
 
 export const styles = StyleSheet.create({
@@ -44,5 +45,16 @@ export const styles = StyleSheet.create({
   circlePlus: {
     paddingTop: 10,
     paddingBottom: 5,
+  },
+  sectionHeader: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  sectionHeading: {
+    fontSize: 20,
+    fontWeight: 500,
+  },
+  sectionCalText: {
+    color: customStyles.graySecondary,
   },
 });
