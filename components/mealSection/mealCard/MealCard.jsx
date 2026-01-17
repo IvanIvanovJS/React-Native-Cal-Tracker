@@ -1,7 +1,15 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { customStyles } from "../../../styles/styles";
 
-export default function MealCard({ name, protein, carbs, fat, calories, id }) {
+export default function MealCard({
+  name,
+  protein,
+  carbs,
+  fat,
+  calories,
+  id,
+  removeMeal,
+}) {
   return (
     <View style={styles.cardWrapper}>
       <View>
@@ -14,7 +22,7 @@ export default function MealCard({ name, protein, carbs, fat, calories, id }) {
         <Text
           style={[styles.cardText, { textAlign: "right" }]}
         >{`${calories} cal`}</Text>
-        <TouchableOpacity hitSlop={10}>
+        <TouchableOpacity onPress={() => removeMeal(id)} hitSlop={10}>
           <Text style={styles.removeText}>Remove</Text>
         </TouchableOpacity>
       </View>

@@ -18,6 +18,9 @@ export default function MealSection({ sectionName, overalCalories }) {
     handleModalClose();
   };
 
+  const handleRemoveMeal = (id) => {
+    setMeals(meals.filter((meal) => meal.id !== id));
+  };
   const totalCals = useMemo(
     () =>
       meals.reduce((sum, meal) => {
@@ -42,7 +45,9 @@ export default function MealSection({ sectionName, overalCalories }) {
         </TouchableOpacity>
       </View>
       {meals.length > 0 &&
-        meals.map((meal) => <MealCard key={meal.id} {...meal} />)}
+        meals.map((meal) => (
+          <MealCard key={meal.id} {...meal} removeMeal={handleRemoveMeal} />
+        ))}
 
       <AddMealModal
         visible={toggleModal}
