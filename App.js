@@ -7,21 +7,22 @@ import AppBar from "./components/appBar/AppBar";
 import { mealSections } from "./lib/constants";
 import MealSection from "./components/mealSection/MealSeaction";
 import { useState } from "react";
+import GoalSection from "./components/goalSection/GoalSection";
 export default function App() {
   const [overalCalories, setOveralCalories] = useState(0);
 
   const handleOveralCalories = (value) => {
-    setOveralCalories(value);
+    setOveralCalories((state) => (state += value));
   };
 
   return (
     <SafeAreaView style={styles.body}>
       <Header />
       <ScrollView>
-        <View style={styles.section}>
-          <Text>Goal 2000 </Text>
-          <Text>Remaining {2000 - overalCalories} </Text>
-        </View>
+        <GoalSection
+          remainingCalories={2000 - overalCalories}
+          eatenFood={overalCalories}
+        />
         {mealSections.map((section, index) => (
           <MealSection
             key={index}
