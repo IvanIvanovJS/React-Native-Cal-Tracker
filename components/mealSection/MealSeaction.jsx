@@ -4,6 +4,7 @@ import { Plus } from "lucide-react-native";
 import AddMealModal from "./addMeal/AddMealModal";
 import { useState } from "react";
 import MealCard from "./mealCard/MealCard";
+import uuid from "react-native-uuid";
 
 export default function MealSection({ sectionName }) {
   const [toggleModal, setToggleModal] = useState(false);
@@ -13,7 +14,7 @@ export default function MealSection({ sectionName }) {
   };
 
   const handleSaveCals = (meal) => {
-    setMeals((state) => [...state, meal]);
+    setMeals((state) => [...state, { ...meal, id: uuid.v4() }]);
     handleModalClose();
   };
 

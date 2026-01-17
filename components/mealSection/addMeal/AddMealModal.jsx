@@ -3,14 +3,14 @@ import { modalMacronutrients } from "../../../lib/constants";
 import { modalStyles } from "../../../styles/styles";
 import Button from "../../ui/button/Button";
 import { useEffect, useState } from "react";
-import uuid from "react-native-uuid";
+
 const initialState = {
   name: "",
   calories: 0,
   protein: 0,
   carbs: 0,
   fat: 0,
-  id: uuid.v4(),
+  id: "",
 };
 export default function AddMealModal({ sectionName, visible, onClose, onAdd }) {
   const [meal, setMeal] = useState(initialState);
