@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-const customStyles = {
+export const customStyles = {
   borderColor: "#edf2f7",
   borderWidth: 2,
   borderRadius: 12,
@@ -65,6 +65,11 @@ export const modalStyles = StyleSheet.create({
     height: "50%",
     width: "90%",
     justifyContent: "center",
+    borderWidth: 1,
+    padding: 10,
+    borderRadius: customStyles.borderRadius,
+    borderColor: customStyles.borderColor,
+    backgroundColor: "#fff",
   },
   modalTitle: {
     textAlign: "center",
@@ -89,5 +94,9 @@ export const modalStyles = StyleSheet.create({
   },
   micronutrientsLayout: {
     flex: 1,
+  },
+  btnsWrapper: {
+    flexDirection: "row",
+    gap: 5,
   },
 });
