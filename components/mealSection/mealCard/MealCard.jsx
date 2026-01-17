@@ -11,7 +11,9 @@ export default function MealCard({ name, protein, carbs, fat, calories, id }) {
         >{`P: ${protein}g • C: ${carbs}g • F: ${fat}g`}</Text>
       </View>
       <View>
-        <Text style={styles.cardText}>{`${calories} cal`}</Text>
+        <Text
+          style={[styles.cardText, { textAlign: "right" }]}
+        >{`${calories} cal`}</Text>
         <TouchableOpacity hitSlop={10}>
           <Text style={styles.removeText}>Remove</Text>
         </TouchableOpacity>
@@ -39,5 +41,6 @@ const styles = StyleSheet.create({
   removeText: {
     fontSize: 14,
     color: "red",
+    textAlign: "right",
   },
 });
